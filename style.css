@@ -1,0 +1,121 @@
+*{
+    box-sizing: border-box
+}
+
+body{
+    font-family: Arial, sans-serif;
+    background-color: #222;
+    margin: 0;
+    padding: 20px;
+    position: relative;
+    height: 100vh;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap:10px;
+    justify-items: center;
+}
+
+select{
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.photo{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    align-items: center;
+    overflow: hidden;
+    gap: 10px;
+    font-size: 17px;
+    color:#ac961e;
+
+}
+
+.photo img{
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+
+.link-holder{
+    position: absolute ;
+    bottom:80px;
+    right:50px;
+    display: none;
+}
+
+.download {
+    text-decoration: none;
+    font-size: 11px;
+    width: 55px;
+    height: 55px;
+    padding:5px;
+    background-color: #ffff;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99;
+}
+
+.download::before,
+.download::after {
+    content: '';
+    position: absolute;
+    width: 65px; /* Outer circle size */
+    height: 65px;
+    border: 2px solid #3e97f7; /* Same color as the button */
+    border-radius: 50%;
+    animation: moveCircle 2s linear infinite;
+}
+
+.download::before {
+    top: -10px; /* Position the top circle */
+    animation-delay: 0s; /* No delay for the top circle */
+
+}
+
+.download::after {
+    bottom: -10px; /* Position the bottom circle */
+    animation-delay: 1s; /* Add delay for the bottom circle */
+}
+
+@keyframes moveCircle {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.5);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
+
+.video-container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    align-items: center;
+    overflow: hidden;
+    gap: 10px;
+    font-size: 17px;
+    color:#ac961e;
+    background-color: white;
+}
