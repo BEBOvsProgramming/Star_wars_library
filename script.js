@@ -26,6 +26,22 @@ try {
             option.innerText = opj.name
             option.value = opj.name
             select.appendChild(option)
+
+            const infnite = document.createElement("div")
+            infnite.classList.add("infnite")
+            const listt = document.createElement("ul")
+            const list1 = document.createElement("li")
+            const list2 = document.createElement("li")
+            let image = document.createElement("img")
+
+            image.src = opj.image
+            list1.innerText = opj.name
+            list2.innerText = opj.description
+            listt.appendChild(list1)
+            listt.appendChild(list2)
+            infnite.appendChild(image)
+            infnite.appendChild(listt)
+            document.querySelector(".infnite-container").appendChild(infnite)
         }
         showAndDownload(data.data)
     }
@@ -63,9 +79,7 @@ function mega(image) {
         setTimeout(() => {
             download.style.display = "block"
         }, 1000)
-
     })
-
 }
 
 
